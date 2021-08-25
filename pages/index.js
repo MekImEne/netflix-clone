@@ -1,6 +1,15 @@
 import Head from "next/head";
+import { signIn, signOut, useSession } from "next-auth/client";
+import { useEffect } from "react";
+import { Router } from "next/dist/client/router";
 
 export default function Home() {
+  const [session, loading] = useSession();
+
+  useEffect(() => {
+    Router.push("/app");
+  });
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-hero ">
       <Head>
@@ -9,6 +18,18 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center ">
+        {!session && (
+          <>
+            Not signed in <br />
+            <button onClick={() => signIn()}>Sign in</button>
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as {session.user.email} <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
         <h1 className="text-5xl font-bold text-white max-w-lg">
           Unlimited movies, TV shows, and more.
         </h1>
@@ -27,7 +48,10 @@ export default function Home() {
               id="email"
               name="email"
             />
-            <button className="bg-[#e50914] text-white text-xl px-8 flex items-center">
+            <button
+              onClick={() => signIn()}
+              className="bg-[#e50914] text-white text-xl px-8 flex items-center"
+            >
               Get Started
               <svg
                 xmlns="http://www.w3.org/2000/svg"
