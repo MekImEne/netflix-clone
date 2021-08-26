@@ -52,7 +52,7 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center ">
-        <h1 className="text-5xl font-bold text-white max-w-lg">
+        <h1 className="text-5xl font-medium text-white max-w-lg tracking-wide">
           Unlimited movies, TV shows, and more.
         </h1>
         <h2 className="text-2xl text-white mt-4 mb-8">
