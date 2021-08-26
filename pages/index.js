@@ -6,10 +6,6 @@ import { Router } from "next/dist/client/router";
 export default function Home() {
   const [session, loading] = useSession();
 
-  useEffect(() => {
-    Router.push("/app");
-  });
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-hero ">
       <Head>
