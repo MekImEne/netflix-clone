@@ -5,10 +5,7 @@ export default async (req, res) => {
   console.log(session);
 
   if (session) {
-    res.send({
-      content:
-        "This is protected content. You can access this content because you are signed in.",
-    });
+    res.send(session.user);
   } else {
     res.send({
       error: "You must be sign in to view the protected content on this page.",
