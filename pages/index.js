@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/client";
-import { useEffect } from "react";
-import { Router } from "next/dist/client/router";
 
 export default function Home() {
   const [session, loading] = useSession();
