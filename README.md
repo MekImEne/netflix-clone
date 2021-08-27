@@ -11,10 +11,14 @@
 - ✅ NextAuth ( authentication 🔑 )
 - ✅ Heroku Hosting to deploy 🚀
 
-### 👇 What are we did ? 👇
+### 👇 What we did ? 👇
 
 - [x] ⌨️ Set up React app using the npx create-next-app -e with-tailwindcss app-name command
 - [x] 🔄 add @tailwindcss/jit compiler
 - [x] 🧭 Build the header with image in background
 - [x] 🏗 Build the authentication part with google provider 🔑
 - [x] 🚀 Deploy application on Heroku
+
+#### Some screenshots
+
+![NetflixHeader](/pages/assets/header.PNG)
